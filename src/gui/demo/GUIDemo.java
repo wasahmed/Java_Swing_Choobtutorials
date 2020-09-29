@@ -46,8 +46,14 @@ public class GUIDemo {
                 System.out.println("click!");
             }
         };
-
+        ActionListener buttonListener2 = new ActionListener() {
+            @Override //interface?
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("HI!");
+            }
+        };
         button1.addActionListener(buttonListener);
+        button2.addActionListener(buttonListener2);
     }
 }
 //Using awt and swing toolkits
