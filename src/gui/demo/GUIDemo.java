@@ -1,6 +1,8 @@
 package gui.demo;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUIDemo {
 
@@ -22,6 +24,17 @@ public class GUIDemo {
         frame.add(button);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    public void setUpButtonListeners(){
+        ActionListener buttonListener = new ActionListener() {
+            @Override //interface?
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("click!");
+            }
+        };
+
+        button.addActionListener(buttonListener);
     }
 }
 //Using awt and swing toolkits
