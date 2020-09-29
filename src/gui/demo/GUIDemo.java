@@ -10,6 +10,7 @@ public class GUIDemo {
     private JFrame frame;
     private JTextField input;
     private JLabel label;
+    private JTextArea textArea;
     private JButton button1;
     private JButton button2;
     private int width;
@@ -19,6 +20,7 @@ public class GUIDemo {
         frame = new JFrame();
         label = new JLabel("HELLO");
         input = new JTextField(10);
+        textArea = new JTextArea("Hello.\nThis is a JTextArea");
         button1 = new JButton("Button 1");
         button2 = new JButton("Button 2");
         this.width = width;
@@ -27,14 +29,16 @@ public class GUIDemo {
 
     public void setUpGUI(){
         Container cp = frame.getContentPane();
-        FlowLayout flow = new FlowLayout();
-        cp.setLayout(flow);
+//        FlowLayout flow = new FlowLayout();
+        BorderLayout brdr = new BorderLayout();
+        cp.setLayout(brdr);
         frame.setSize(width,height);
         frame.setTitle("First GUI");
-        cp.add(input);
-        cp.add(label);
-        cp.add(button1);
-        cp.add(button2);
+        cp.add(input, BorderLayout.NORTH);
+        cp.add(label, BorderLayout.SOUTH);
+        cp.add(button1, BorderLayout.WEST);
+        cp.add(button2, BorderLayout.EAST) ;
+        cp.add(textArea, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
