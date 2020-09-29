@@ -48,8 +48,12 @@ public class GUIDemo {
                     label.setText(s);
                     input.setText("");
                 }
-                if (e.getSource() == button2)
-                    System.out.println("Hi");
+                if (e.getSource() == button2) {
+                    String val = input.getText();
+                    double n = Double.parseDouble(val);
+                    double result = n * 2;
+                    label.setText(Double.toString(result));
+                }
             }
         };
         button1.addActionListener(buttonListener);
