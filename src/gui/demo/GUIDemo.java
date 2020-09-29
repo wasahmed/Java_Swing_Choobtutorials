@@ -43,8 +43,11 @@ public class GUIDemo {
         ActionListener buttonListener = new ActionListener() {
             @Override //interface?
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == button1)
-                    System.out.println("click!");
+                if (e.getSource() == button1) {
+                    String s = input.getText();
+                    label.setText(s);
+                    input.setText("");
+                }
                 if (e.getSource() == button2)
                     System.out.println("Hi");
             }
